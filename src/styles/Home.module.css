@@ -1,0 +1,7 @@
+.home {
+  background-color: #fafafa;
+  padding: 3rem 6.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
