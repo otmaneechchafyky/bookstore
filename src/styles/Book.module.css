@@ -1,0 +1,104 @@
+.bookCard {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.category,
+.completedWord,
+.currentChapterTitle {
+  color: #121212;
+  opacity: 0.5;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.author {
+  color: #0290ff;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button,
+.button1 {
+  border: none;
+  border-left: solid 1px rgba(128, 128, 128, 0.418);
+  background-color: transparent;
+  color: #0290ff;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.button1 {
+  border: none;
+  padding-left: 0;
+}
+
+.completed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progressCompleted {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.percentage {
+  color: #121212;
+  font-size: 2rem;
+}
+
+.progressCercle {
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid #0290ff;
+  border-radius: 50%;
+}
+
+.currentChapter {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 5rem;
+}
+
+.progressButton {
+  height: 2.5rem;
+  background-color: #0290ff;
+  border: 2px solid transparent;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.progressButton:hover {
+  color: #0290ff;
+  border: 2px solid #0290ff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+}

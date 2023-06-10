@@ -1,0 +1,55 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formTitle {
+  color: #888;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.input,
+.select {
+  height: 3rem;
+  border-radius: 4px;
+  padding: 0 0.5rem;
+  border: 1px solid #e8e8e8;
+}
+
+.select,
+.input:focus {
+  outline: 0;
+  border-color: #a7a6a6;
+}
+
+.select,
+.input::placeholder {
+  color: #cccbcb;
+}
+
+.select:focus {
+  color: black;
+}
+
+.submitButton {
+  color: #fff;
+  background-color: #0290ff;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.submitButton:hover {
+  color: #0290ff;
+  border: 2px solid #0290ff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
