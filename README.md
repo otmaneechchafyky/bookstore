@@ -56,7 +56,7 @@ REQUIRED SECTIONS:
 
 # 📖 [Bookstore] <a name="about-project"></a>
 
-**[Bookstore]** A Bookstore React app is a web application that allows users to browse, search, and Add books online. It provides a user-friendly interface where users can explore a wide range of books, view book details, add books to their cart, and complete the checkout process.
+**[Bookstore]**  Is a web React application that allows users to browse, add, comment and remove books online. It provides a user-friendly interface where users can explore a wide range of books, view book details, add books to their cart, and complete the checkout process.
 
 ## 🛠 Built With <a name="built-with"></a>
 
