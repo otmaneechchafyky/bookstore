@@ -10,7 +10,6 @@ REQUIRED SECTIONS:
 - Table of Contents
 - About the Project
   - Built With
-  - Live Demo
 - Getting Started
 - Authors
 - Future Features
@@ -54,7 +53,7 @@ REQUIRED SECTIONS:
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Math Magicians] <a name="about-project"></a>
+# 📖 [Bookstore] <a name="about-project"></a>
 
 **[Bookstore]** A Bookstore React app is a web application that allows users to browse, search, and Add books online. It provides a user-friendly interface where users can explore a wide range of books, view book details, add books to their cart, and complete the checkout process.
 
@@ -81,14 +80,6 @@ REQUIRED SECTIONS:
 - **[Edit and Comment your book]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- n/a
-
-<!-- - [Live Demo Link]() -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,7 +140,7 @@ Example:
 ## 👥 Authors <a name="authors"></a>
 
 
-👤 **Author1**
+👤 **Otmane Echchafyky**
 
 - GitHub: [@otmaneechchafyky](https://github.com/otmaneechchafyky)
 - Twitter: [@EchchafykyO](https://twitter.com/EchchafykyO)
@@ -198,7 +189,5 @@ I would like to thank Microverse community.
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
