@@ -1,19 +1,11 @@
 import React from 'react';
 import Books from '../components/Books';
-import BookForm from '../components/BookForm';
-import allBooks from '../allBooks';
 import styles from '../styles/Home.module.css';
 
-const Home = () => {
-  const booksList = allBooks;
-
-  return (
+const Home = () =>
+  (
     <div className={styles.home}>
-      <Books booksList={booksList} />
-      <hr />
-      <BookForm />
+      <Books />
     </div>
   );
-};
-
 export default Home;
