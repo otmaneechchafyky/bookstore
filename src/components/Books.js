@@ -1,13 +1,39 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchBooks } from '../redux/books/booksSlice';
 import BookForm from './BookForm';
 import Book from './Book';
 import '../App.css';
 
 const Books = () => {
   const booksList = useSelector((store) => store.books.booksList);
+  const loading = useSelector((store) => store.books.loading);
+  const error = useSelector((store) => store.books.error);
+  const dispatch = useDispatch();
 
-  const list = booksList.map((book, key) => (
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return (
+      <div>
+        Error:
+        {error}
+      </div>
+    );
+  }
+
+  const booksArr = Object.entries(booksList).map(([key, value]) => ({
+    item_id: key,
+    ...value[0],
+  }));
+
+  const list = booksArr.map((book, key) => (
     <Book booksListObj={book} key={key} />
   ));
   return (

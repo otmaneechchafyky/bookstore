@@ -21,7 +21,9 @@
       "react/forbid-prop-types": ["error", { "forbid": ["any"] }],
       "react/no-array-index-key": "off",
       "no-shadow": "off",
-      "implicit-arrow-linebreak": "off"
+      "no-console": 0,
+      "implicit-arrow-linebreak": "off",
+      "linebreak-style": ["error", "unix"]
     },
     "overrides": [
       {
