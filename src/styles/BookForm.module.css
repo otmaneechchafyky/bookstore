@@ -53,3 +53,12 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
+
+@media (max-width: 768px) {
+  .form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+}

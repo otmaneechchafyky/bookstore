@@ -36,8 +36,9 @@ li {
   border-right: 4px solid #0290ff;
   border-radius: 100%;
   animation: spinRight 800ms linear infinite;
-  
-  &:before, &:after {
+
+  &::before,
+  &::after {
     content: '';
     width: 6vmax;
     height: 6vmax;
@@ -49,8 +50,8 @@ li {
     border-radius: 100%;
     animation: spinLeft 800ms linear infinite;
   }
-  
-  &:after {
+
+  &::after {
     width: 4vmax;
     height: 4vmax;
     top: calc(50% - 2vmax);
@@ -62,11 +63,11 @@ li {
 }
 
 @keyframes spinLeft {
-  from {transform:rotate(0deg);}
-  to {transform:rotate(720deg);}
+  from { transform: rotate(0deg); }
+  to { transform: rotate(720deg); }
 }
 
 @keyframes spinRight {
-  from {transform:rotate(360deg);}
-  to {transform:rotate(0deg);}
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
