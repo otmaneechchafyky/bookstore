@@ -1,12 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { deleteBook, fetchBooks } from '../redux/books/booksSlice';
 import '../App.css';
 import styles from '../styles/Book.module.css';
 
 const Book = ({ booksListObj }) => {
   const dispatch = useDispatch();
+
+  const handleDelete = async (id) => {
+    try {
+      await dispatch(deleteBook(id));
+      dispatch(fetchBooks());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.bookCard}>
       <div className={styles.bookInfo}>
@@ -26,7 +36,7 @@ const Book = ({ booksListObj }) => {
               type="button"
               className={styles.button}
               onClick={() => {
-                dispatch(removeBook(booksListObj.id));
+                handleDelete(booksListObj.item_id);
               }}
             >
               Remove
@@ -44,8 +54,8 @@ const Book = ({ booksListObj }) => {
         <div className={styles.progressCercle} />
         <p className={styles.progressCompleted}>
           <span className={styles.percentage}>
-            {booksListObj.completed}
-            %
+            {/* {booksListObj.completed} */}
+            97%
           </span>
           <span className={styles.completedWord}>Completed</span>
         </p>
@@ -53,8 +63,10 @@ const Book = ({ booksListObj }) => {
 
       <div className={styles.currentChapter}>
         <p className={styles.currentChapterTitle}>Current Chapter</p>
-        <p className={styles.chapter}>{booksListObj.chapter}</p>
-        <button type="button" className={styles.progressButton}>UPDATE PROGRESS</button>
+        <p className={styles.chapter}>chapter 69</p>
+        <button type="button" className={styles.progressButton}>
+          UPDATE PROGRESS
+        </button>
       </div>
     </div>
   );
@@ -62,7 +74,6 @@ const Book = ({ booksListObj }) => {
 
 Book.propTypes = {
   booksListObj: PropTypes.object.isRequired,
-  id: PropTypes.number.isRequired,
 };
 
 export default Book;

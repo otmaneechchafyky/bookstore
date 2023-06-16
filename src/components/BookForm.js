@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { addNewBook, fetchBooks } from '../redux/books/booksSlice';
 import styles from '../styles/BookForm.module.css';
 
 const BookForm = () => {
@@ -26,15 +26,20 @@ const BookForm = () => {
     }));
   };
 
-  const handledispatch = (e) => {
+  const handledispatch = async (e) => {
     e.preventDefault();
-    const info = [book.title, book.author];
-    if (info[0] !== '' || info[1] !== '') {
-      dispatch(addBook(info));
-      book.title = '';
-      book.author = '';
+    const bookInfo = [book.title, book.author, book.category];
+    if (bookInfo[0] !== '' || bookInfo[1] !== '' || bookInfo[2] !== '') {
+      try {
+        await dispatch(addNewBook(bookInfo));
+        dispatch(fetchBooks());
+        setBook({ title: '', author: '' });
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
+
   return (
     <div className={styles.formContainer}>
       <p className={styles.formTitle}>ADD NEW BOOK</p>
