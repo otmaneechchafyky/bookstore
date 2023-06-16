@@ -8,7 +8,6 @@ import '../App.css';
 const Books = () => {
   const booksList = useSelector((store) => store.books.booksList);
   const loading = useSelector((store) => store.books.loading);
-  const error = useSelector((store) => store.books.error);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,16 +15,7 @@ const Books = () => {
   }, [dispatch]);
 
   if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return (
-      <div>
-        Error:
-        {error}
-      </div>
-    );
+    return <div className="loading-container"><div className="loading" /></div>;
   }
 
   const booksArr = Object.entries(booksList).map(([key, value]) => ({
