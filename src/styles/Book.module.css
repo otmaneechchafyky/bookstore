@@ -102,3 +102,29 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
+
+@media (max-width: 768px) {
+  .bookCard {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .bookInfo {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
+  }
+
+  .button {
+    border: none;
+    padding: 0;
+  }
+
+  .currentChapter {
+    padding-left: 0;
+  }
+}

@@ -7,7 +7,6 @@ const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstor
 const initialState = {
   booksList: [],
   loading: true,
-  error: null,
 };
 
 export const fetchBooks = createAsyncThunk('books/fectBooks', async () => {
@@ -47,62 +46,40 @@ export const deleteBook = createAsyncThunk('books/deleteBook', async (id) => {
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  // reducers: {
-  //   addBook: (state, action) => {
-  //     const newBook = {
-  //       item_id: uuidv4(),
-  //       title: action.payload[0],
-  //       category: 'Maths',
-  //       author: action.payload[1],
-  //     };
-  //     // state.booksList = [...state.booksList, newBook];
-  //     state.booksList.push(newBook);
-  //   },
-  //   removeBook: (state, action) => {
-  //     const bookId = action.payload;
-  //     state.booksList = state.booksList.filter((book) => book.item_id !== bookId);
-  //   },
-  // },
-  // fetchBooks Extra reducers
+
   extraReducers: (builder) => {
     builder
+      // handle AddNewBook's promise
       .addCase(fetchBooks.pending, (state) => {
         state.loading = true;
-        state.error = null;
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
         state.loading = false;
         state.booksList = action.payload;
       })
-      .addCase(fetchBooks.rejected, (state, action) => {
+      .addCase(fetchBooks.rejected, (state) => {
         state.loading = false;
-        state.error = action.error.message;
       })
-
+      // handle AddNewBook's promise
       .addCase(addNewBook.pending, (state) => {
         state.loading = true;
-        state.error = null;
       })
       .addCase(addNewBook.fulfilled, (state) => {
         state.loading = false;
-        // state.booksList = [...state.booksList, newBook];
       })
-      .addCase(addNewBook.rejected, (state, action) => {
+      .addCase(addNewBook.rejected, (state) => {
         state.loading = false;
-        state.error = action.error.message;
       })
 
+      // handle deleteBook's promise
       .addCase(deleteBook.pending, (state) => {
         state.loading = true;
-        state.error = null;
       })
       .addCase(deleteBook.fulfilled, (state) => {
         state.loading = false;
-        // state.booksList = [...state.booksList, newBook];
       })
-      .addCase(deleteBook.rejected, (state, action) => {
+      .addCase(deleteBook.rejected, (state) => {
         state.loading = false;
-        state.error = action.error.message;
       });
   },
 });
